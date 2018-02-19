@@ -1,0 +1,5 @@
+sd2e/dataframe-prod-0.1.0:latest
+/opt/scripts/dataframe-prod.sh
+rule30_test.json transcription_profile.csv
+/work/05202/meslami/jobs/meslami/job-1906202418015366680-242ac11b-0001-007-dataframe-job-test
+app.json dataframe-job-test-1906202418015366680-242ac11b-0001-007.err dataframe-job-test-1906202418015366680-242ac11b-0001-007.out dataframe-job-test.ipcexe dataframe-prod-job.json Rule30 rule30_test.json runner-template.sh tester.sh _util
