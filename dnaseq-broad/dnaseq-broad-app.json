@@ -9,24 +9,24 @@
     "modules": [
       "load tacc-singularity"
     ],
-    "deploymentPath": "acristo/apps/rnaseq-broad/",
+    "deploymentPath": "meslami/apps/dnaseq-broad/",
     "deploymentSystem": "data-sd2e-projects-users",
     "executionSystem": "hpc-tacc-maverick-acristo",
     "executionType": "HPC",
     "helpURI":"https://sd2e.org/develop/",
-    "label": "RNASeq-broad",
-    "longDescription": "A tool for mapping, counting, and profiling RNAseq data",
-    "name": "rnaseq-broad",
+    "label": "DNASeq-broad",
+    "longDescription": "A tool for mapping and counting DNAseq data",
+    "name": "dnaseq-broad",
     "parallelism": "SERIAL",
-    "shortDescription": "RNA-Seq Broad mapping pipeline",
+    "shortDescription": "DNA-Seq Broad mapping pipeline",
     "ontology": [
       "http://edamontology.org/topic_0091"
     ],
     "tags": [
-            "RNA-Seq",
+            "DNA-Seq",
             "Mapping",
-            "rnaseq-broad",
-            "docker://index.docker.io/sd2e/rnaseq-broad:0.1.2"
+            "dnaseq-broad",
+            "docker://index.docker.io/sd2e/dnaseq-broad:0.1.0"
     ],
     "templatePath": "runner-template.sh",
     "testPath": "tester.sh",
@@ -34,9 +34,9 @@
     "inputs":[{
         "id":"read1",
         "value":
-            {"default":"read1.rna_free_reads.fastq",
+            {"default":"read1.fastq",
              "required":true,
-             "validator":"rna_free_reads",
+             "validator":"",
              "visible":true},
         "semantics":
             {"ontology":["https://en.wikipedia.org/wiki/FASTQ_format"],
@@ -49,10 +49,10 @@
              "showArgument": false}},
     {   "id":"read2",
         "value":
-            {"default":"DEFAULT.rna_free_reads",
+            {"default":"DEFAULT",
              "order":0,
              "required":false,
-             "validator":"rna_free_reads",
+             "validator":"",
              "visible":true},
         "semantics":
             {"ontology":["https://en.wikipedia.org/wiki/FASTQ_format"],

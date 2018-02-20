@@ -33,7 +33,7 @@ GFF=${4}
 BED=${5}
 STRANDED=${6}
 
-# This pattern match will take processed rRNA & trimmed fastq files or unprocessed raw fastq files
+# This pattern match will take processed trimmed fastq files or unprocessed raw fastq files
 PATTERN='^(.*)_R[1-2]_00[1-8]_rna_free_reads.fastq$'
 PATTERN2='^(.*)_rrna_free_reads_unmerged_R[1-2].fastq$'
 TESTPATTERN='^(.*)_rrna_free_reads_unmerged_R[1-2].40k.fastq$'
@@ -52,7 +52,7 @@ if [[ $SAMPLE =~ $TESTPATTERN ]]
         SAMPLE="${BASH_REMATCH[1]}.$SAMPLEFASTA"
 fi
 # If we get the default R2 value of DEFAULT.rna_free_reads, this is an unpaired run
-if [ $R2 = "DEFAULT.rna_free_reads" ]; then
+if [ $R2 = "" ]; then
     paired=0
     R2=""
 fi
@@ -86,9 +86,8 @@ echo "$SAMPLE	$FASTA	$GFF	$BED	$R1	$R2	./mapping/	./results/" >> settings.txt
 mkdir mapping results
 
 # Run the python scripts that steer the ship
-python /opt/rnaseq-broad/map_reads.py -settings settings.txt -sample $SAMPLE -cores $CORES
-python /opt/rnaseq-broad/count_reads.py -settings settings.txt -sample $SAMPLE -strand_opt $STRANDED -cores $CORES
-python /opt/rnaseq-broad/transcription_profile.py -settings settings.txt -sample $SAMPLE -cores $CORES
+python /opt/dnaseq-broad/map_reads.py -settings settings.txt -sample $SAMPLE -cores $CORES
+python /opt/dnaseq-broad/count_reads.py -settings settings.txt -sample $SAMPLE -strand_opt $STRANDED -cores $CORES
 
 # Copy the output files we want to keep
 mkdir $SAMPLE

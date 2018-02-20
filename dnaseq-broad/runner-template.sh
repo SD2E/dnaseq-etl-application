@@ -12,5 +12,5 @@ echo "gff is ${gff}"
 echo "bed is ${bed}"
 echo "stranded is ${stranded}"
 
-echo DEBUG=1 container_exec ${CONTAINER_IMAGE} /opt/scripts/rnaseqbroad.sh ${read1} ${read2} ${fasta} ${gff} ${bed} ${stranded}
-DEBUG=1 container_exec ${CONTAINER_IMAGE} /opt/scripts/rnaseqbroad.sh ${read1} ${read2} ${fasta} ${gff} ${bed} ${stranded}
+echo DEBUG=1 container_exec ${CONTAINER_IMAGE} /opt/scripts/dnaseqbroad.sh ${read1} ${read2} ${fasta} ${gff} ${bed} ${stranded}
+DEBUG=1 container_exec ${CONTAINER_IMAGE} /opt/scripts/dnaseqbroad.sh ${read1} ${read2} ${fasta} ${gff} ${bed} ${stranded}
