@@ -78,7 +78,7 @@ function count_logical_cores() {
 CORES=$(count_logical_cores)
 
 # Create the settings file for use in the python scripts
-echo "Running alignment, count, and profile on $SAMPLE"
+echo "Running alignment and count on $SAMPLE"
 
 echo "sample	fasta_file	gff_file	bed_file	R1_fastq_file	R2_fastq_file	temp_path	output_path" > settings.txt
 echo "None						./	" >> settings.txt

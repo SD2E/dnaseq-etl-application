@@ -66,13 +66,13 @@ RUN mkdir -p /data && chown root:root /data
 #RUN mkdir /home/work/test
 RUN mkdir test mapping results
 RUN mkdir -p /opt/scripts/
-ADD /src/rnaseq-broad /opt/rnaseq-broad
-ADD /src/rnaseqbroad.sh /opt/scripts/rnaseqbroad.sh
-RUN chmod 777 /opt/scripts/rnaseqbroad.sh
-RUN chmod 777 /opt/rnaseq-broad/*
+ADD /src/dnaseq-broad /opt/dnaseq-broad
+ADD /src/dnaseqbroad.sh /opt/scripts/dnaseqbroad.sh
+RUN chmod 777 /opt/scripts/dnaseqbroad.sh
+RUN chmod 777 /opt/dnaseq-broad/*
 
 # Transfer our test data
-ADD /rnaseq-broad/test/ /test
+ADD /dnaseq-broad/test/ /test
 
 # Test python version
 CMD python --version

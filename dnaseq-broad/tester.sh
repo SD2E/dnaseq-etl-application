@@ -3,10 +3,10 @@
 . _util/container_exec.sh
 
 version=$(cat ./VERSION)
-export CONTAINER_IMAGE="sd2e/rnaseq-broad:$version"
+export CONTAINER_IMAGE="sd2e/dnaseq-broad:$version"
 
 cp ../test-data-cache/* test/
-DEBUG=1 container_exec ${CONTAINER_IMAGE} /opt/scripts/rnaseqbroad.sh \
+DEBUG=1 container_exec ${CONTAINER_IMAGE} /opt/scripts/dnaseqbroad.sh \
 	./test/4342744_rrna_free_reads_unmerged_R1.fastq \
 	./test/4342744_R2_001_rna_free_reads.fastq \
 	./test/circuit1.fasta \
