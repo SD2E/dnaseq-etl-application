@@ -3,7 +3,7 @@
 . _util/container_exec.sh
 
 version=$(cat ./VERSION)
-CONTAINER_IMAGE="sd2e/rnaseq-broad:$version"
+CONTAINER_IMAGE="sd2e/dnaseq-broad:$version"
 
 echo "read1 is ${read1}"
 echo "read2 is ${read2}"

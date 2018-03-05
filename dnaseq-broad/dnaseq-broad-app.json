@@ -11,7 +11,7 @@
     ],
     "deploymentPath": "meslami/apps/dnaseq-broad/",
     "deploymentSystem": "data-sd2e-projects-users",
-    "executionSystem": "hpc-tacc-maverick-acristo",
+    "executionSystem": "hpc-tacc-maverick-meslami",
     "executionType": "HPC",
     "helpURI":"https://sd2e.org/develop/",
     "label": "DNASeq-broad",

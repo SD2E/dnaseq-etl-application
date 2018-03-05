@@ -72,7 +72,7 @@ RUN chmod 777 /opt/scripts/dnaseqbroad.sh
 RUN chmod 777 /opt/dnaseq-broad/*
 
 # Transfer our test data
-ADD /dnaseq-broad/test/ /test
+#ADD /dnaseq-broad/test/ /test
 
 # Test python version
 CMD python --version
