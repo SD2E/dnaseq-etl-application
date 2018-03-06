@@ -30,7 +30,7 @@
     ],
     "templatePath": "runner-template.sh",
     "testPath": "tester.sh",
-    "version": "0.1.2",
+    "version": "0.1.0",
     "inputs":[{
         "id":"read1",
         "value":
