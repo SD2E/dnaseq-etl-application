@@ -1,6 +1,6 @@
 {
   "name": "dnaseq-broad_test-0001",
-  "appId": "dnaseq-broad-0.1.2",
+  "appId": "dnaseq-broad-0.1.0",
   "archive": false,
   "inputs": {
     "read1":  "agave://data-sd2e-community/archive/processed/Q0/rule30/sd2.ginkgo/RNAseq/170925_NB501485_0078_AHHC3WBGX3/4311022_S55_R1_001_rna_free_reads.fastq",
@@ -10,6 +10,7 @@
     "bed": "agave://data-sd2e-community/archive/shared-q0-hackathon/yeast-gates/W303_gff_references/yeastgate_references/circuit1.bed"
   },
   "parameters": {
-    "stranded": "yes"
+    "stranded": "yes",
+    "max_insert_size":"100"
   }
 }

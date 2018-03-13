@@ -268,6 +268,8 @@ def map_reads(settings, sample, cores):
         data = bedfile.readlines()
     genomesize = sum([int(x.split()[2].rstrip()) for x in data])
     Nbases = min(14, (math.log(genomesize, 2) / 2) - 1)
+    sys.stderr.write("Max Insert Size: " + settings[sample]['MaxInsertSize'] + "\n")
+    sys.stderr.write("Read Length: " + settings[sample]['ReadLength'] + "\n")
     cmd_index = 'STAR --runMode genomeGenerate ' + \
                 '--runThreadN ' + str(cores) + ' ' + \
                 '--genomeDir ./ ' + \

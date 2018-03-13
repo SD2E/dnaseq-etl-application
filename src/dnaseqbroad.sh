@@ -33,6 +33,9 @@ GFF=${4}
 BED=${5}
 STRANDED=${6}
 MAXINSERTSIZE=${7}
+
+#Calculate read length by averaging length of first 1000 reads in fastq
+
 READLENGTH=`awk 'NR%4 == 2{
 lengths[length($0)]++
 total+=1
@@ -42,9 +45,6 @@ for(l in lengths){avg+=l*lengths[l]/total}
 print avg}' $R1`
 
 echo $READLENGTH
-
-#Calculate read length by averaging length of first 1000 reads in fastq
-
 
 # This pattern match will take processed trimmed fastq files or unprocessed raw fastq files
 PATTERN='^(.*)_R[1-2]_00[1-8]_rna_free_reads.fastq$'
