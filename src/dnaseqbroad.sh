@@ -32,6 +32,19 @@ FASTA=${3}
 GFF=${4}
 BED=${5}
 STRANDED=${6}
+MAXINSERTSIZE=${7}
+READLENGTH=`awk 'NR%4 == 2{
+lengths[length($0)]++
+total+=1
+}END{
+for(l in lengths){avg+=l*lengths[l]/total}
+}END{
+print avg}' $R1`
+
+echo $READLENGTH
+
+#Calculate read length by averaging length of first 1000 reads in fastq
+
 
 # This pattern match will take processed trimmed fastq files or unprocessed raw fastq files
 PATTERN='^(.*)_R[1-2]_00[1-8]_rna_free_reads.fastq$'
@@ -80,9 +93,9 @@ CORES=$(count_logical_cores)
 # Create the settings file for use in the python scripts
 echo "Running alignment and count on $SAMPLE"
 
-echo "sample	fasta_file	gff_file	bed_file	R1_fastq_file	R2_fastq_file	temp_path	output_path" > settings.txt
+echo "sample	fasta_file	gff_file	bed_file	R1_fastq_file	R2_fastq_file	MaxInsertSize	ReadLength	temp_path	output_path" > settings.txt
 echo "None						./	" >> settings.txt
-echo "$SAMPLE	$FASTA	$GFF	$BED	$R1	$R2	./mapping/	./results/" >> settings.txt
+echo "$SAMPLE	$FASTA	$GFF	$BED	$R1	$R2	$MAXINSERTSIZE	$READLENGTH	./mapping/	./results/" >> settings.txt
 mkdir mapping results
 
 # Run the python scripts that steer the ship

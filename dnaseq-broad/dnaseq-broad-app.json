@@ -121,6 +121,15 @@
             "type": "string",
             "visible": true
            }
+    },
+    {
+        "id": "max_insert_size",
+        "value":
+           {"default": "100",
+            "required": true,
+            "type": "string",
+            "visible": true
+           }
     }
    ]
 }

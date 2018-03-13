@@ -273,9 +273,8 @@ def map_reads(settings, sample, cores):
                 '--genomeDir ./ ' + \
                 '--genomeFastaFiles ' + settings[sample]['fasta_file'] + ' ' + \
                 '--genomeSAindexNbases ' + str(Nbases) + \
-                '----alignIntronMax 1 ' + \
-                '--alignMatesGapMax 150'  
-				#Above hard code needs to be changed to this: str(<MaxInsertSize-2*ReadLength>). Readlength = 50
+                '--alignIntronMax 1 ' + \
+                '--alignMatesGapMax ' + str(float(settings[sample]['MaxInsertSize'])-2*float(settings[sample]['ReadLength']))  
     print("Making index: " + cmd_index)
     status3 = subprocess.call(cmd_index, shell=True)
     if status3 != 0:
